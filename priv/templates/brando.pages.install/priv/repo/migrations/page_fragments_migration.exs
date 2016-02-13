@@ -5,7 +5,7 @@ defmodule <%= application_module %>.Repo.Migrations.CreatePageFragments do
   def up do
     create table(:pagefragments) do
       add :key,               :text
-      add :language,          :text
+      add :language,          :text, null: false
       villain
       add :creator_id,        references(:users)
       timestamps

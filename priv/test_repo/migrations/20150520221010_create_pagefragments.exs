@@ -4,8 +4,8 @@ defmodule BrandoPages.Repo.Migrations.CreatePageFragments do
 
   def up do
     create table(:pagefragments) do
-      add :key,               :text
-      add :language,          :text
+      add :key,               :text, null: false
+      add :language,          :text, null: false
       villain
       add :creator_id,        references(:users)
       timestamps
