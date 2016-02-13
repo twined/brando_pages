@@ -132,6 +132,34 @@ defmodule Brando.Pages.ControllerTest do
     assert redirected_to(conn, 302) =~ "/admin/pages"
   end
 
+  test "rerender" do
+    user = Factory.create(:user)
+    Factory.create(:page, creator: user)
+
+    conn =
+      :get
+      |> call("/admin/pages/rerender")
+      |> with_user
+      |> send_request
+
+    assert redirected_to(conn, 302) =~ "/admin/pages"
+    assert get_flash(conn, :notice) == "Pages re-rendered"
+  end
+
+  test "duplicate" do
+    user = Factory.create(:user)
+    page = Factory.create(:page, creator: user)
+
+    conn =
+      :get
+      |> call("/admin/pages/#{page.id}/duplicate")
+      |> with_user
+      |> send_request
+
+    assert html_response(conn, 200) =~ "New page"
+    assert get_flash(conn, :notice) == "Page duplicated"
+  end
+
   test "uses villain" do
     funcs = Brando.Admin.PageController.__info__(:functions)
     funcs = Keyword.keys(funcs)

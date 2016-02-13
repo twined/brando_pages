@@ -129,13 +129,6 @@ defmodule Brando.Page do
   end
 
   @doc """
-  Preloads :creator field
-  """
-  def preload_creator(query) do
-    from m in query, preload: [:creator]
-  end
-
-  @doc """
   Search pages for `q`
   """
   def search(language, query) do
