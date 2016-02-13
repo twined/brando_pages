@@ -1,4 +1,5 @@
-%{"certifi": {:hex, :certifi, "0.3.0"},
+%{"brando": {:git, "https://github.com/twined/brando.git", "21613290e8d1cfa2686578d22fbf9beed504094b", []},
+  "certifi": {:hex, :certifi, "0.3.0"},
   "combine": {:hex, :combine, "0.7.0"},
   "comeonin": {:hex, :comeonin, "2.1.0"},
   "connection": {:hex, :connection, "1.0.2"},
