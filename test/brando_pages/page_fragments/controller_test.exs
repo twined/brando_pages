@@ -107,6 +107,26 @@ defmodule Brando.PageFragments.ControllerTest do
     assert redirected_to(conn, 302) =~ "/admin/pages/fragments"
   end
 
+  test "update (page) w/erroneus params" do
+    user = Factory.create(:user)
+    page_fragment = Factory.create(:page_fragment, creator: user)
+
+    page_fragment_params =
+      :page_fragment_params
+      |> Factory.build(creator: user)
+      |> Map.put(:data, "")
+      |> Map.put(:key, "")
+
+    conn =
+      :patch
+      |> call("/admin/pages/fragments/#{page_fragment.id}", %{"page_fragment" => page_fragment_params})
+      |> with_user(user)
+      |> send_request
+
+    assert html_response(conn, 200) =~ "Edit page fragment"
+    assert get_flash(conn, :error) == "Errors in form"
+  end
+
   test "delete_confirm" do
     user = Factory.create(:user)
     page = Factory.create(:page_fragment, creator: user)

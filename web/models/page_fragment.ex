@@ -54,7 +54,7 @@ defmodule Brando.PageFragment do
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
   def changeset(model, :update, params) do
     model
-    |> cast(params, [], @required_fields ++ @optional_fields)
+    |> cast(params, @required_fields, @optional_fields)
     |> generate_html()
   end
 

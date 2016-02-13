@@ -16,7 +16,7 @@ defmodule Brando.Pages.UtilsTest do
 
   test "render_fragment valid" do
     user = Factory.create(:user)
-    page_fragment = Factory.create(:page_fragment, creator: user)
+    Factory.create(:page_fragment, creator: user)
 
     {:safe, return} = Utils.render_fragment("key/path")
     assert return =~ "Missing page fragment"
