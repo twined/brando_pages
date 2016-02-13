@@ -1,0 +1,25 @@
+/**
+ * Brando Pages - Frontend styles
+ * (c) twined 2016
+ */
+
+.page-fragment-missing {
+  background-color: #FF6464;
+  padding: 5px 10px;
+  font-family: monospace;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.image-info-wrapper {
+  padding-top: 5px;
+  .image-title {
+    font-style: italic;
+    float: left;
+  }
+
+  .image-credits {
+    float: right;
+    font-style: italic;
+  }
+}
