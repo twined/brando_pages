@@ -35,7 +35,7 @@ defmodule BrandoPages.Mixfile do
      {:ex_machina, "~> 0.6.1", only: :test},
      {:excoveralls, "~> 0.4", only: :test},
 
-     {:brando, github: "twined/brando"},
+     {:brando, github: "twined/brando", optional: true},
 
      # Documentation dependencies
      {:ex_doc, "~> 0.11", only: :docs},
