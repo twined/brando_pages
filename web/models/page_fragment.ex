@@ -13,8 +13,8 @@ defmodule Brando.PageFragment do
 
   import Brando.Pages.Gettext
 
-  @required_fields ~w(key language data creator_id)
-  @optional_fields ~w(html)
+  @required_fields ~w(key language data creator_id)a
+  @optional_fields ~w(html)a
 
   schema "pagefragments" do
     field :key, :string
@@ -34,8 +34,8 @@ defmodule Brando.PageFragment do
       model_changeset = changeset(%__MODULE__{}, :create, params)
 
   """
-  @spec changeset(t, atom, Keyword.t | Options.t | :empty) :: t
-  def changeset(model, action, params \\ :empty)
+  @spec changeset(t, atom, Keyword.t | Options.t | :invalid) :: t
+  def changeset(model, action, params \\ :invalid)
   def changeset(model, :create, params) do
     model
     |> cast(params, @required_fields, @optional_fields)

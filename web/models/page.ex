@@ -13,8 +13,8 @@ defmodule Brando.Page do
 
   import Brando.Pages.Gettext
 
-  @required_fields ~w(key language title slug data status creator_id)
-  @optional_fields ~w(parent_id meta_description meta_keywords html css_classes)
+  @required_fields ~w(key language title slug data status creator_id)a
+  @optional_fields ~w(parent_id meta_description meta_keywords html css_classes)a
 
   schema "pages" do
     field :key, :string
@@ -41,11 +41,12 @@ defmodule Brando.Page do
       model_changeset = changeset(%__MODULE__{}, :create, params)
 
   """
-  @spec changeset(t, atom, Keyword.t | Options.t | :empty) :: t
-  def changeset(model, action, params \\ :empty)
+  @spec changeset(t, atom, Keyword.t | Options.t | :invalid) :: t
+  def changeset(model, action, params \\ :invalid)
   def changeset(model, :create, params) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @required_fields ++ @optional_fields)
+    |> validate_required(@required_fields)
     |> generate_html()
   end
 
@@ -61,7 +62,8 @@ defmodule Brando.Page do
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
   def changeset(model, :update, params) do
     model
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @required_fields ++ @optional_fields)
+    |> validate_required(@required_fields)
     |> generate_html()
   end
 

@@ -12,7 +12,7 @@ defmodule Brando.PageFragmentForm do
     Brando.config(:languages)
   end
 
-  form "page_fragment", [model: PageFragment, class: "grid-form",
+  form "page_fragment", [schema: PageFragment, class: "grid-form",
                          helper: :admin_page_fragment_path] do
     field :key, :text
     fieldset do
