@@ -17,7 +17,7 @@ Add brando_pages to your list of dependencies in `mix.exs`:
 
 Install migrations and frontend files:
 
-    $ mix brando.pages.install
+    $ mix brando_pages.install
 
 Run migrations
 
