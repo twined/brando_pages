@@ -34,8 +34,8 @@ defmodule Brando.PageFragment do
       model_changeset = changeset(%__MODULE__{}, :create, params)
 
   """
-  @spec changeset(t, atom, Keyword.t | Options.t | :invalid) :: t
-  def changeset(model, action, params \\ :invalid)
+  @spec changeset(t, atom, Keyword.t | Options.t) :: t
+  def changeset(model, action, params \\ %{})
   def changeset(model, :create, params) do
     model
     |> cast(params, @required_fields, @optional_fields)
