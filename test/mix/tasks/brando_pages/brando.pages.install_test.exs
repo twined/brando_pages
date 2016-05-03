@@ -53,6 +53,19 @@ defmodule Mix.Tasks.BrandoPages.InstallTest do
       assert file =~ "villain"
     end
 
+    # check timestamps not overlapping
+    migration_timestamps =
+      Path.wildcard("priv/repo/migrations/*.exs")
+      |> Enum.map(&Path.basename/1)
+      |> Enum.map(&String.split(&1, "_"))
+      |> Enum.map(&List.first/1)
+
+    migration_timestamps_after_uniq =
+      migration_timestamps
+      |> Enum.uniq
+
+    assert Enum.count(migration_timestamps) == Enum.count(migration_timestamps_after_uniq)
+
     assert_file "web/static/css/includes/_pages.scss", fn file ->
       assert file =~ ".page-fragment-missing"
     end
