@@ -10,7 +10,6 @@ defmodule Brando.Admin.PageController do
 
   import Brando.Pages.Gettext
   import Brando.Plug.HTML
-  import Brando.Plug.I18n
   import Brando.Utils, only: [helpers: 1]
   import Brando.Utils.Model, only: [put_creator: 2]
 
@@ -18,7 +17,6 @@ defmodule Brando.Admin.PageController do
 
   plug :put_section, "pages"
   plug :scrub_params, "page" when action in [:create, :update]
-  plug :put_admin_locale, Brando.Pages.Gettext
 
   @doc false
   def index(conn, _params) do
