@@ -5,8 +5,8 @@ defmodule Brando.Pages.PageFragmentTest do
   alias BrandoPages.Factory
 
   setup do
-    user = Factory.create(:user)
-    page = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page_fragment, creator: user)
     {:ok, %{user: user, page: page}}
   end
 

@@ -18,8 +18,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "show" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     conn =
       :get
@@ -41,8 +41,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "edit" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     conn =
       :get
@@ -61,8 +61,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "create (page) w/params" do
-    user = Factory.create(:user)
-    page_params = Factory.build(:page_params, creator: user)
+    user = Factory.insert(:user)
+    page_params = Factory.params_for(:page, creator_id: user.id)
     conn =
       :post
       |> call("/admin/pages/", %{"page" => page_params})
@@ -73,11 +73,9 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "create (page) w/erroneus params" do
-    user = Factory.create(:user)
+    user = Factory.insert(:user)
     page_params =
-      :page_params
-      |> Factory.build(creator: user)
-      |> Map.put("data", "")
+      Factory.params_for(:page, creator: user, data: "")
     conn =
       :post
       |> call("/admin/pages/", %{"page" => page_params})
@@ -89,13 +87,11 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "update (page) w/params" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     page_params =
-      :page_params
-      |> Factory.build(creator: user)
-      |> Map.put("data", ~s([{"type":"text","data":{"text":"zcxvxcv","type":"paragraph"}}]))
+      Factory.params_for(:page, creator_id: user.id, data: ~s([{"type":"text","data":{"text":"zcxvxcv","type":"paragraph"}}]))
 
     conn =
       :patch
@@ -107,14 +103,14 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "update (page) w/erroneus params" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     page_params =
-      :page_params
-      |> Factory.build(creator: user)
-      |> Map.put("title", "")
-      |> Map.put("data", ~s([{"type":"text","data":{"text":"zcxvxcv","type":"paragraph"}}]))
+      :page
+      |> Factory.params_for(creator_id: user.id)
+      |> Map.put(:title, "")
+      |> Map.put(:data, ~s([{"type":"text","data":{"text":"zcxvxcv","type":"paragraph"}}]))
 
     conn =
       :patch
@@ -127,8 +123,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "delete_confirm" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     conn =
       :get
@@ -140,8 +136,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "delete" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     conn =
       :delete
@@ -153,8 +149,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "rerender" do
-    user = Factory.create(:user)
-    Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    Factory.insert(:page, creator: user)
 
     conn =
       :get
@@ -167,8 +163,8 @@ defmodule Brando.Pages.ControllerTest do
   end
 
   test "duplicate" do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
 
     conn =
       :get

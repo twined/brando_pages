@@ -5,8 +5,8 @@ defmodule Brando.Pages.PageTest do
   alias BrandoPages.Factory
 
   setup do
-    user = Factory.create(:user)
-    page = Factory.create(:page, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page, creator: user)
     {:ok, %{user: user, page: page}}
   end
 

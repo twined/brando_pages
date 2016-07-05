@@ -18,8 +18,8 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "show" do
-    user = Factory.create(:user)
-    page = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page_fragment, creator: user)
 
     conn =
       :get
@@ -41,8 +41,8 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "edit" do
-    user = Factory.create(:user)
-    page = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page_fragment, creator: user)
 
     conn =
       :get
@@ -61,8 +61,8 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "create (page) w/params" do
-    user = Factory.create(:user)
-    page_params = Factory.build(:page_fragment_params, creator: user)
+    user = Factory.insert(:user)
+    page_params = Factory.params_for(:page_fragment, creator_id: user.id)
     conn =
       :post
       |> call("/admin/pages/fragments/",
@@ -74,11 +74,11 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "create (page) w/erroneus params" do
-    user = Factory.create(:user)
+    user = Factory.insert(:user)
     page_params =
-      :page_fragment_params
-      |> Factory.build(creator: user)
-      |> Map.put("data", "")
+      :page_fragment
+      |> Factory.params_for(creator_id: user.id, data: "")
+
     conn =
       :post
       |> call("/admin/pages/fragments/", %{"page_fragment" => page_params})
@@ -90,13 +90,12 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "update (page) w/params" do
-    user = Factory.create(:user)
-    page = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page_fragment, creator: user)
 
     page_params =
-      :page_fragment_params
-      |> Factory.build(creator: user)
-      |> Map.put("data", ~s([{"type":"text","data":{"text":"zcxvxcv","type":"paragraph"}}]))
+      :page_fragment
+      |> Factory.params_for(creator_id: user.id, data: ~s([{"type":"text","data":{"text":"zcxvxcv","type":"paragraph"}}]))
 
     conn =
       :patch
@@ -108,14 +107,11 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "update (page) w/erroneus params" do
-    user = Factory.create(:user)
-    page_fragment = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page_fragment = Factory.insert(:page_fragment, creator: user)
 
     page_fragment_params =
-      :page_fragment_params
-      |> Factory.build(creator: user)
-      |> Map.put(:data, "")
-      |> Map.put(:key, "")
+      Factory.params_for(:page_fragment, creator_id: user.id, data: "", key: "")
 
     conn =
       :patch
@@ -128,8 +124,8 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "delete_confirm" do
-    user = Factory.create(:user)
-    page = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page_fragment, creator: user)
 
     conn =
       :get
@@ -141,8 +137,8 @@ defmodule Brando.PageFragments.ControllerTest do
   end
 
   test "delete" do
-    user = Factory.create(:user)
-    page = Factory.create(:page_fragment, creator: user)
+    user = Factory.insert(:user)
+    page = Factory.insert(:page_fragment, creator: user)
 
     conn =
       :delete

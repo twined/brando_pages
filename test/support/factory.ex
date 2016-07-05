@@ -5,7 +5,7 @@ defmodule BrandoPages.Factory do
   alias Brando.Page
   alias Brando.PageFragment
 
-  def factory(:user) do
+  def user_factory do
     %User{
       full_name: "James Williamson",
       email: "james@thestooges.com",
@@ -17,7 +17,7 @@ defmodule BrandoPages.Factory do
     }
   end
 
-  def factory(:page) do
+  def page_factory do
     %Page{
       key: "key/path",
       language: "en",
@@ -31,32 +31,8 @@ defmodule BrandoPages.Factory do
     }
   end
 
-  def factory(:page_params) do
-    %{
-      key: "key/path",
-      language: "en",
-      title: "Page title",
-      slug: "page-title",
-      data: ~s([{"type":"text","data":{"text":"Text in p.","type":"paragraph"}}]),
-      html: ~s(<p>Text in p.</p>),
-      status: :published,
-      css_classes: "extra-class",
-      creator: build(:user),
-    }
-  end
-
-  def factory(:page_fragment) do
+  def page_fragment_factory do
     %PageFragment{
-      key: "key/path",
-      language: "en",
-      data: ~s([{"type":"text","data":{"text":"Text in p.","type":"paragraph"}}]),
-      html: ~s(<p>Text in p.</p>),
-      creator: build(:user)
-    }
-  end
-
-  def factory(:page_fragment_params) do
-    %{
       key: "key/path",
       language: "en",
       data: ~s([{"type":"text","data":{"text":"Text in p.","type":"paragraph"}}]),
