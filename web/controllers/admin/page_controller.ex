@@ -95,10 +95,9 @@ defmodule Brando.Admin.PageController do
     page =
       Page
       |> Brando.repo.get_by(id: id)
-      |> Map.drop([:__struct__, :__meta__, :id, :key, :slug, :title,
-                   :children, :creator, :parent, :updated_at, :inserted_at])
+      |> Map.drop([:id, :children, :creator, :parent, :updated_at, :inserted_at])
 
-    changeset = Page.changeset(%Brando.Page{}, :create, page)
+    changeset = Page.changeset(page, :create)
 
     conn
     |> put_flash(:notice, gettext("Page duplicated"))
