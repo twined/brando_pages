@@ -9,7 +9,6 @@ defmodule Brando.Page do
   use Brando.Villain, :model
 
   alias Brando.Type.Status
-  alias Brando.User
 
   import Brando.Pages.Gettext
 
@@ -24,7 +23,7 @@ defmodule Brando.Page do
     villain
     field :status, Status
     field :css_classes, :string
-    belongs_to :creator, User
+    belongs_to :creator, Brando.User
     belongs_to :parent, __MODULE__
     has_many :children, __MODULE__, foreign_key: :parent_id
     field :meta_description, :string

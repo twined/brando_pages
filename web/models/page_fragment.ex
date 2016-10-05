@@ -9,7 +9,6 @@ defmodule Brando.PageFragment do
   use Brando.Villain, :model
 
   alias Brando.Type.Json
-  alias Brando.User
 
   import Brando.Pages.Gettext
 
@@ -21,7 +20,7 @@ defmodule Brando.PageFragment do
     field :language, :string
     field :data, Json
     field :html, :string
-    belongs_to :creator, User
+    belongs_to :creator, Brando.User
     timestamps
   end
 
