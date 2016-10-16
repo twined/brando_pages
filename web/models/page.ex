@@ -163,6 +163,9 @@ defmodule Brando.Page do
       meta_keywords: gettext("META keywords"),
       inserted_at: gettext("Inserted"),
       updated_at: gettext("Updated"),
+    ],
+    help: [
+      parent_id: gettext("If this page should belong to another, select parent page here.")
     ]
   ]
 end
