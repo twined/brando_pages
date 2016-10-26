@@ -29,6 +29,8 @@ defmodule Brando.Pages.Routes.Admin do
       nil_opts = Keyword.put(opts, :as, nil)
       fctrl = PageFragmentController
 
+      villain_routes "#{path}/fragments", fctrl
+
       get    "#{path}/fragments",            fctrl, :index,          opts
       get    "#{path}/fragments/new",        fctrl, :new,            opts
       get    "#{path}/fragments/:id",        fctrl, :show,           opts
