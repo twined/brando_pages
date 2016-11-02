@@ -5,13 +5,13 @@ defmodule Brando.Admin.PageController do
 
   use Brando.Web, :controller
   use Brando.Villain, [:controller, [
-    image_model: Brando.Image,
-    series_model: Brando.ImageSeries]]
+    image_schema: Brando.Image,
+    series_schema: Brando.ImageSeries]]
 
   import Brando.Pages.Gettext
   import Brando.Plug.HTML
   import Brando.Utils, only: [helpers: 1]
-  import Brando.Utils.Model, only: [put_creator: 2]
+  import Brando.Utils.Schema, only: [put_creator: 2]
 
   alias Brando.Page
 

@@ -1,12 +1,12 @@
 defmodule Brando.Page do
   @moduledoc """
-  Ecto schema for the Page model.
+  Ecto schema for the Page schema.
   """
 
   @type t :: %__MODULE__{}
 
-  use Brando.Web, :model
-  use Brando.Villain, :model
+  use Brando.Web, :schema
+  use Brando.Villain, :schema
 
   alias Brando.Type.Status
 
@@ -32,35 +32,35 @@ defmodule Brando.Page do
   end
 
   @doc """
-  Casts and validates `params` against `model` to create a valid
+  Casts and validates `params` against `schema` to create a valid
   changeset when action is :create.
 
   ## Example
 
-      model_changeset = changeset(%__MODULE__{}, :create, params)
+      schema_changeset = changeset(%__MODULE__{}, :create, params)
 
   """
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
-  def changeset(model, action, params \\ %{})
-  def changeset(model, :create, params) do
-    model
+  def changeset(schema, action, params \\ %{})
+  def changeset(schema, :create, params) do
+    schema
     |> cast(params, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
     |> generate_html()
   end
 
   @doc """
-  Casts and validates `params` against `model` to create a valid
+  Casts and validates `params` against `schema` to create a valid
   changeset when action is :update.
 
   ## Example
 
-      model_changeset = changeset(%__MODULE__{}, :update, params)
+      schema_changeset = changeset(%__MODULE__{}, :update, params)
 
   """
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
-  def changeset(model, :update, params) do
-    model
+  def changeset(schema, :update, params) do
+    schema
     |> cast(params, @required_fields ++ @optional_fields)
     |> validate_required(@required_fields)
     |> generate_html()
@@ -91,7 +91,7 @@ defmodule Brando.Page do
   end
 
   @doc """
-  Only gets models that are parents
+  Only gets schemas that are parents
   """
   def with_parents(query) do
     from m in query,
@@ -99,7 +99,7 @@ defmodule Brando.Page do
   end
 
   @doc """
-  Get model with children from DB by `id`
+  Get schema with children from DB by `id`
   """
   def with_children(query) do
     from m in query,
@@ -112,7 +112,7 @@ defmodule Brando.Page do
   end
 
   @doc """
-  Gets model with parents and children
+  Gets schema with parents and children
   """
   def with_parents_and_children(query) do
     children_query =
@@ -141,7 +141,7 @@ defmodule Brando.Page do
   #
   # Meta
 
-  use Brando.Meta.Model, [
+  use Brando.Meta.Schema, [
     singular: gettext("page"),
     plural: gettext("pages"),
     repr: &("#{&1.title}"),

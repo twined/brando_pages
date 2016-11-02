@@ -1,12 +1,12 @@
 defmodule Brando.PageFragment do
   @moduledoc """
-  Ecto schema for the PageFragment model.
+  Ecto schema for the PageFragment schema.
   """
 
   @type t :: %__MODULE__{}
 
-  use Brando.Web, :model
-  use Brando.Villain, :model
+  use Brando.Web, :schema
+  use Brando.Villain, :schema
 
   alias Brando.Type.Json
 
@@ -25,34 +25,34 @@ defmodule Brando.PageFragment do
   end
 
   @doc """
-  Casts and validates `params` against `model` to create a valid
+  Casts and validates `params` against `schema` to create a valid
   changeset when action is :create.
 
   ## Example
 
-      model_changeset = changeset(%__MODULE__{}, :create, params)
+      schema_changeset = changeset(%__MODULE__{}, :create, params)
 
   """
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
-  def changeset(model, action, params \\ %{})
-  def changeset(model, :create, params) do
-    model
+  def changeset(schema, action, params \\ %{})
+  def changeset(schema, :create, params) do
+    schema
     |> cast(params, @required_fields, @optional_fields)
     |> generate_html()
   end
 
   @doc """
-  Casts and validates `params` against `model` to create a valid
+  Casts and validates `params` against `schema` to create a valid
   changeset when action is :update.
 
   ## Example
 
-      model_changeset = changeset(%__MODULE__{}, :update, params)
+      schema_changeset = changeset(%__MODULE__{}, :update, params)
 
   """
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
-  def changeset(model, :update, params) do
-    model
+  def changeset(schema, :update, params) do
+    schema
     |> cast(params, @required_fields, @optional_fields)
     |> generate_html()
   end
@@ -68,7 +68,7 @@ defmodule Brando.PageFragment do
   #
   # Meta
 
-  use Brando.Meta.Model, [
+  use Brando.Meta.Schema, [
     singular: gettext("page fragment"),
     plural: gettext("page fragments"),
     repr: &("#{&1.key}"),

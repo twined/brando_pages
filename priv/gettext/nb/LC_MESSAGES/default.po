@@ -20,11 +20,11 @@ msgstr "Tilbake til oversikten"
 msgid "Confirm deletion"
 msgstr "Bekreft sletting"
 
-#: web/models/page.ex:160 web/models/page_fragment.ex:81
+#: web/schemas/page.ex:160 web/schemas/page_fragment.ex:81
 msgid "Creator"
 msgstr "Opprettet av"
 
-#: web/models/page.ex:155 web/models/page_fragment.ex:79
+#: web/schemas/page.ex:155 web/schemas/page_fragment.ex:79
 msgid "Data"
 msgstr "Data"
 
@@ -48,7 +48,7 @@ msgstr "Oppføring fantes ikke"
 msgid "Errors in form"
 msgstr "Feil i skjema"
 
-#: web/models/page.ex:156 web/models/page_fragment.ex:80
+#: web/schemas/page.ex:156 web/schemas/page_fragment.ex:80
 msgid "HTML"
 msgstr "HTML"
 
@@ -56,15 +56,15 @@ msgstr "HTML"
 msgid "Index"
 msgstr "Oversikt"
 
-#: web/models/page.ex:151 web/models/page_fragment.ex:77
+#: web/schemas/page.ex:151 web/schemas/page_fragment.ex:77
 msgid "Language"
 msgstr "Språk"
 
-#: web/models/page.ex:162
+#: web/schemas/page.ex:162
 msgid "META description"
 msgstr "META beskrivelse"
 
-#: web/models/page.ex:163
+#: web/schemas/page.ex:163
 msgid "META keywords"
 msgstr "META nøkkelord"
 
@@ -76,11 +76,11 @@ msgstr "Venter"
 msgid "Published"
 msgstr "Publisert"
 
-#: web/models/page.ex:154
+#: web/schemas/page.ex:154
 msgid "Slug"
 msgstr "URL-tamp"
 
-#: web/models/page.ex:150
+#: web/schemas/page.ex:150
 msgid "Status"
 msgstr "Status"
 
@@ -94,7 +94,7 @@ msgstr "Dette objektet kan ikke gjenopprettes!"
 msgid "You are about to delete this object. Please check carefully, and note that any dependent objects will also be removed."
 msgstr "Du er i ferd med å slette dette objektet. Alle underordnede objekter slettes også."
 
-#: web/models/page.ex:157 web/models/page.ex:158
+#: web/schemas/page.ex:157 web/schemas/page.ex:158
 msgid "Belongs to"
 msgstr "Tilhører"
 
@@ -128,7 +128,7 @@ msgstr "Endre side"
 msgid "Edit page fragment"
 msgstr "Endre sidefragment"
 
-#: web/models/page.ex:161
+#: web/schemas/page.ex:161
 msgid "Extra CSS classes"
 msgstr "Ekstra CSS klasser"
 
@@ -150,11 +150,11 @@ msgstr "Sidefragmentsoversikt"
 msgid "Index - pages"
 msgstr "Sideoversikt"
 
-#: web/models/page.ex:164 web/models/page_fragment.ex:82
+#: web/schemas/page.ex:164 web/schemas/page_fragment.ex:82
 msgid "Inserted"
 msgstr "Opprettet"
 
-#: web/models/page.ex:152 web/models/page_fragment.ex:78
+#: web/schemas/page.ex:152 web/schemas/page_fragment.ex:78
 msgid "Key"
 msgstr "Nøkkel"
 
@@ -229,30 +229,30 @@ msgstr "Vis side"
 msgid "Show page fragment"
 msgstr "Vis sidefragment"
 
-#: web/models/page.ex:159
+#: web/schemas/page.ex:159
 msgid "Sub pages"
 msgstr "Undersider"
 
-#: web/models/page.ex:153
+#: web/schemas/page.ex:153
 msgid "Title"
 msgstr "Tittel"
 
-#: web/models/page.ex:165 web/models/page_fragment.ex:83
+#: web/schemas/page.ex:165 web/schemas/page_fragment.ex:83
 msgid "Updated"
 msgstr "Oppdatert"
 
-#: web/models/page.ex:145
+#: web/schemas/page.ex:145
 msgid "page"
 msgstr "side"
 
-#: web/models/page_fragment.ex:72
+#: web/schemas/page_fragment.ex:72
 msgid "page fragment"
 msgstr "sidefragment"
 
-#: web/models/page_fragment.ex:73
+#: web/schemas/page_fragment.ex:73
 msgid "page fragments"
 msgstr "sidefragmenter"
 
-#: web/models/page.ex:146
+#: web/schemas/page.ex:146
 msgid "pages"
 msgstr "sider"

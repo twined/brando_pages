@@ -1,6 +1,6 @@
 defmodule Brando.PageFragmentForm do
   @moduledoc """
-  A form for the PageFragment model. See the `Brando.Form` module for more
+  A form for the PageFragment schema. See the `Brando.Form` module for more
   documentation
   """
 

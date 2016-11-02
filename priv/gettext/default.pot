@@ -17,11 +17,11 @@ msgstr ""
 msgid "Confirm deletion"
 msgstr ""
 
-#: web/models/page.ex:160 web/models/page_fragment.ex:81
+#: web/schemas/page.ex:160 web/schemas/page_fragment.ex:81
 msgid "Creator"
 msgstr ""
 
-#: web/models/page.ex:155 web/models/page_fragment.ex:79
+#: web/schemas/page.ex:155 web/schemas/page_fragment.ex:79
 msgid "Data"
 msgstr ""
 
@@ -45,7 +45,7 @@ msgstr ""
 msgid "Errors in form"
 msgstr ""
 
-#: web/models/page.ex:156 web/models/page_fragment.ex:80
+#: web/schemas/page.ex:156 web/schemas/page_fragment.ex:80
 msgid "HTML"
 msgstr ""
 
@@ -53,15 +53,15 @@ msgstr ""
 msgid "Index"
 msgstr ""
 
-#: web/models/page.ex:151 web/models/page_fragment.ex:77
+#: web/schemas/page.ex:151 web/schemas/page_fragment.ex:77
 msgid "Language"
 msgstr ""
 
-#: web/models/page.ex:162
+#: web/schemas/page.ex:162
 msgid "META description"
 msgstr ""
 
-#: web/models/page.ex:163
+#: web/schemas/page.ex:163
 msgid "META keywords"
 msgstr ""
 
@@ -73,11 +73,11 @@ msgstr ""
 msgid "Published"
 msgstr ""
 
-#: web/models/page.ex:154
+#: web/schemas/page.ex:154
 msgid "Slug"
 msgstr ""
 
-#: web/models/page.ex:150
+#: web/schemas/page.ex:150
 msgid "Status"
 msgstr ""
 
@@ -91,7 +91,7 @@ msgstr ""
 msgid "You are about to delete this object. Please check carefully, and note that any dependent objects will also be removed."
 msgstr ""
 
-#: web/models/page.ex:157 web/models/page.ex:158
+#: web/schemas/page.ex:157 web/schemas/page.ex:158
 msgid "Belongs to"
 msgstr ""
 
@@ -125,7 +125,7 @@ msgstr ""
 msgid "Edit page fragment"
 msgstr ""
 
-#: web/models/page.ex:161
+#: web/schemas/page.ex:161
 msgid "Extra CSS classes"
 msgstr ""
 
@@ -147,11 +147,11 @@ msgstr ""
 msgid "Index - pages"
 msgstr ""
 
-#: web/models/page.ex:164 web/models/page_fragment.ex:82
+#: web/schemas/page.ex:164 web/schemas/page_fragment.ex:82
 msgid "Inserted"
 msgstr ""
 
-#: web/models/page.ex:152 web/models/page_fragment.ex:78
+#: web/schemas/page.ex:152 web/schemas/page_fragment.ex:78
 msgid "Key"
 msgstr ""
 
@@ -226,30 +226,30 @@ msgstr ""
 msgid "Show page fragment"
 msgstr ""
 
-#: web/models/page.ex:159
+#: web/schemas/page.ex:159
 msgid "Sub pages"
 msgstr ""
 
-#: web/models/page.ex:153
+#: web/schemas/page.ex:153
 msgid "Title"
 msgstr ""
 
-#: web/models/page.ex:165 web/models/page_fragment.ex:83
+#: web/schemas/page.ex:165 web/schemas/page_fragment.ex:83
 msgid "Updated"
 msgstr ""
 
-#: web/models/page.ex:145
+#: web/schemas/page.ex:145
 msgid "page"
 msgstr ""
 
-#: web/models/page_fragment.ex:72
+#: web/schemas/page_fragment.ex:72
 msgid "page fragment"
 msgstr ""
 
-#: web/models/page_fragment.ex:73
+#: web/schemas/page_fragment.ex:73
 msgid "page fragments"
 msgstr ""
 
-#: web/models/page.ex:146
+#: web/schemas/page.ex:146
 msgid "pages"
 msgstr ""
