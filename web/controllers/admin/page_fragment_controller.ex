@@ -3,9 +3,7 @@ defmodule Brando.Admin.PageFragmentController do
   Controller for the Brando PageFragment module.
   """
   use Brando.Web, :controller
-  use Brando.Villain, [:controller, [
-    image_schema: Brando.Image,
-    series_schema: Brando.ImageSeries]]
+  use Brando.Villain, :controller
 
   import Ecto.Query
 

@@ -4,10 +4,7 @@ defmodule Brando.Admin.PageController do
   """
 
   use Brando.Web, :controller
-  use Brando.Villain, [:controller, [
-    image_schema: Brando.Image,
-    series_schema: Brando.ImageSeries]]
-
+  use Brando.Villain, :controller
   import Brando.Pages.Gettext
   import Brando.Plug.HTML
   import Brando.Utils, only: [helpers: 1]
