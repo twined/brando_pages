@@ -43,10 +43,13 @@ defmodule Brando.PageForm do
   @doc false
   @spec parent_selected?(String.t, Integer.t) :: boolean
   def parent_selected?(form_value, model_value) do
+    form_value  = is_binary(form_value) && form_value || to_string(form_value)
+    model_value = is_binary(model_value) && model_value || to_string(model_value)
+
     cond do
-      form_value == ""                             -> false
-      String.to_integer(form_value) == model_value -> true
-      true                                         -> false
+      form_value == ""          -> false
+      form_value == model_value -> true
+      true                      -> false
     end
   end
 
