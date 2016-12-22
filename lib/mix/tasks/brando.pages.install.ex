@@ -16,7 +16,7 @@ defmodule Mix.Tasks.BrandoPages.Install do
             "priv/repo/migrations/timestamp_create_page_fragments.exs"},
 
     {:copy, "templates/brando.pages.install/web/static/css/includes/_pages.scss",
-            "web/static/css/includes/_pages.scss"},
+            "assets/css/includes/_pages.scss"},
   ]
 
   @static []
