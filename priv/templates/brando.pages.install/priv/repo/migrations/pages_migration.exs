@@ -8,14 +8,14 @@ defmodule <%= application_module %>.Repo.Migrations.CreatePages do
       add :language,          :text, null: false
       add :title,             :text, null: false
       add :slug,              :text, null: false
-      villain
+      villain()
       add :status,            :integer
       add :parent_id,         references(:pages), default: nil
       add :creator_id,        references(:users)
       add :css_classes,       :text
       add :meta_description,  :text
       add :meta_keywords,     :text
-      timestamps
+      timestamps()
     end
     create index(:pages, [:language])
     create index(:pages, [:slug])

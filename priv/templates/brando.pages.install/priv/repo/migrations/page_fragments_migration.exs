@@ -6,9 +6,9 @@ defmodule <%= application_module %>.Repo.Migrations.CreatePageFragments do
     create table(:pagefragments) do
       add :key,               :text
       add :language,          :text, null: false
-      villain
+      villain()
       add :creator_id,        references(:users)
-      timestamps
+      timestamps()
     end
     create index(:pagefragments, [:language])
     create index(:pagefragments, [:key])
