@@ -12,7 +12,7 @@ defmodule Brando.Admin.PageFragmentController do
   import Brando.Utils, only: [helpers: 1]
   import Brando.Utils.Schema, only: [put_creator: 2]
 
-  alias Brando.PageFragment
+  alias Brando.Pages.PageFragment
 
   plug :put_section, "page_fragments"
   plug :scrub_params, "page_fragment" when action in [:create, :update]

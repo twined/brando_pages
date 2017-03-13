@@ -5,7 +5,7 @@ defmodule Brando.PageFragmentForm do
   """
 
   use Brando.Form
-  alias Brando.PageFragment
+  alias Brando.Pages.PageFragment
 
   @doc false
   def get_language_choices() do

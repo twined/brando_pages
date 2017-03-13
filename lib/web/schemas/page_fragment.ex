@@ -1,4 +1,4 @@
-defmodule Brando.PageFragment do
+defmodule Brando.Pages.PageFragment do
   @moduledoc """
   Ecto schema for the PageFragment schema.
   """
@@ -15,13 +15,13 @@ defmodule Brando.PageFragment do
   @required_fields ~w(key language data creator_id)a
   @optional_fields ~w(html)a
 
-  schema "pagefragments" do
+  schema "pages_pagefragments" do
     field :key, :string
     field :language, :string
     field :data, Json
     field :html, :string
     belongs_to :creator, Brando.User
-    timestamps
+    timestamps()
   end
 
   @doc """
@@ -37,7 +37,8 @@ defmodule Brando.PageFragment do
   def changeset(schema, action, params \\ %{})
   def changeset(schema, :create, params) do
     schema
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @required_fields ++ @optional_fields)
+    |> validate_required(@required_fields)
     |> generate_html()
   end
 
@@ -53,7 +54,8 @@ defmodule Brando.PageFragment do
   @spec changeset(t, atom, Keyword.t | Options.t) :: t
   def changeset(schema, :update, params) do
     schema
-    |> cast(params, @required_fields, @optional_fields)
+    |> cast(params, @required_fields ++ @optional_fields)
+    |> validate_required(@required_fields)
     |> generate_html()
   end
 

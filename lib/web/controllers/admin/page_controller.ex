@@ -10,7 +10,7 @@ defmodule Brando.Admin.PageController do
   import Brando.Utils, only: [helpers: 1]
   import Brando.Utils.Schema, only: [put_creator: 2]
 
-  alias Brando.Page
+  alias Brando.Pages.Page
 
   plug :put_section, "pages"
   plug :scrub_params, "page" when action in [:create, :update]

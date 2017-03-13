@@ -11,7 +11,7 @@ defmodule Mix.Tasks.BrandoPages.InstallTest do
 
   setup_all do
     templates_path = Path.join([@project_path, "deps",
-                               "brando_pages", "web", "templates"])
+                               "brando_pages", "lib", "web", "templates"])
     root_path =  File.cwd!
 
     # Clean up
@@ -25,7 +25,7 @@ defmodule Mix.Tasks.BrandoPages.InstallTest do
 
     # Copy templates into `deps/?/templates`
     # to mimic a real Phoenix application
-    File.cp_r! Path.join([root_path, "web", "templates"]), templates_path
+    File.cp_r! Path.join([root_path, "lib", "web", "templates"]), templates_path
 
     # Move into the project directory to run the generator
     File.cd! @project_path
@@ -66,7 +66,7 @@ defmodule Mix.Tasks.BrandoPages.InstallTest do
 
     assert Enum.count(migration_timestamps) == Enum.count(migration_timestamps_after_uniq)
 
-    assert_file "web/static/css/includes/_pages.scss", fn file ->
+    assert_file "assets/css/includes/_pages.scss", fn file ->
       assert file =~ ".page-fragment-missing"
     end
   end

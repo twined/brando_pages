@@ -3,7 +3,7 @@ defmodule Brando.Pages.Utils do
   Brando page utilities.
   """
   import Ecto.Query
-  alias Brando.PageFragment
+  alias Brando.Pages.PageFragment
 
   @doc """
   Renders a page fragment by `key`.

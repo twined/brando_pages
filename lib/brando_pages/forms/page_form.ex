@@ -5,7 +5,7 @@ defmodule Brando.PageForm do
   """
 
   use Brando.Form
-  alias Brando.Page
+  alias Brando.Pages.Page
   import Brando.Pages.Gettext
 
   @doc false

@@ -2,8 +2,8 @@ defmodule BrandoPages.Factory do
   use ExMachina.Ecto, repo: Brando.repo
 
   alias Brando.User
-  alias Brando.Page
-  alias Brando.PageFragment
+  alias Brando.Pages.Page
+  alias Brando.Pages.PageFragment
 
   def user_factory do
     %User{

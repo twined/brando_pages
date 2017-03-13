@@ -1,4 +1,4 @@
-defmodule Brando.Page do
+defmodule Brando.Pages.Page do
   @moduledoc """
   Ecto schema for the Page schema.
   """
@@ -15,12 +15,12 @@ defmodule Brando.Page do
   @required_fields ~w(key language title slug data status creator_id)a
   @optional_fields ~w(parent_id meta_description meta_keywords html css_classes)a
 
-  schema "pages" do
+  schema "pages_pages" do
     field :key, :string
     field :language, :string
     field :title, :string
     field :slug, :string
-    villain
+    villain()
     field :status, Status
     field :css_classes, :string
     belongs_to :creator, Brando.User
@@ -28,7 +28,7 @@ defmodule Brando.Page do
     has_many :children, __MODULE__, foreign_key: :parent_id
     field :meta_description, :string
     field :meta_keywords, :string
-    timestamps
+    timestamps()
   end
 
   @doc """

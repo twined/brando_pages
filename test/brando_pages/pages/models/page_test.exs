@@ -1,7 +1,7 @@
 defmodule Brando.Pages.PageTest do
   use ExUnit.Case
   use BrandoPages.ConnCase
-  alias Brando.Page
+  alias Brando.Pages.Page
   alias BrandoPages.Factory
 
   setup do
